@@ -1,9 +1,8 @@
 # Databricks notebook source
 import sys
 import os
-# Get the notebook path and derive the project root
-notebook_path = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
-project_root = os.path.abspath("/Workspace" + os.path.join(os.path.dirname(notebook_path), "../../.."))
+# Go two levels up to reach the project root
+project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
 
 if project_root not in sys.path:
     sys.path.append(project_root)

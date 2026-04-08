@@ -13,7 +13,7 @@ import shutil
 from datetime import datetime
 from datetime import date, datetime, timezone
 from dateutil.relativedelta import relativedelta
-from modules.utils.data_utils import get_target_yyyymm
+from modules.utils.date_utils import get_target_yyyymm
 from modules.data_loader.file_downloader import download_file
 
 # Obtains the year-month for 2 months prior to the current month in yyyy-MM format

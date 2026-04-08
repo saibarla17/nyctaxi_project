@@ -1,8 +1,9 @@
 # Databricks notebook source
 import sys
 import os
-# Go two levels up to reach the project root
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+# Get the notebook path and derive the project root
+notebook_path = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
+project_root = os.path.abspath("/Workspace" + os.path.join(os.path.dirname(notebook_path), "../../.."))
 
 if project_root not in sys.path:
     sys.path.append(project_root)
@@ -12,7 +13,7 @@ import shutil
 from datetime import datetime
 from datetime import date, datetime, timezone
 from dateutil.relativedelta import relativedelta
-from modules.utils.date_utils import get_target_yyyymm
+from modules.utils.data_utils import get_target_yyyymm
 from modules.data_loader.file_downloader import download_file
 
 # Obtains the year-month for 2 months prior to the current month in yyyy-MM format

@@ -10,7 +10,7 @@ if project_root not in sys.path:
 from pyspark.sql.functions import current_timestamp
 from dateutil.relativedelta import relativedelta
 from datetime import date
-from modules.utils.date_utils import get_target_yyyymm
+from modules.utils.data_utils import get_target_yyyymm
 from modules.transformations.metadata import add_processed_timestamp
 
 # COMMAND ----------
